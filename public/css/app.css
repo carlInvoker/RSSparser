@@ -76,7 +76,8 @@ nav ul li {
 }
 .description img {
   width: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-right: 25px;
 }
 .description p, .description a {
@@ -231,4 +232,3 @@ nav ul li {
   transition: all 0.3s ease-out;
 }
 
-/*# sourceMappingURL=app.css.map */

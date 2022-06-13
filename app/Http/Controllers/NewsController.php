@@ -6,18 +6,19 @@ use App\Models\News;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNewsRequest;
+use App\Http\Requests\NewsRequest;
 use Illuminate\Support\Facades\Config;
 
 class NewsController extends Controller
 {
 
-  public function getNews(Request $request) {
+  public function getNews(NewsRequest $request) {
     $date = $request->input('date');
     $news =  News::select('*')
                     ->when($date, function ($query, $date) {
                               return $query->orderBy('pubdate', $date);
                           })
-                    ->paginate(Config::get('pagination.userPage'))->onEachSide(1);
+                    ->simplePaginate(Config::get('pagination.userPage'));
     return response()->json($news, 200);
   }
 

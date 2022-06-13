@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+$secondaryBackground: #f3f9ff;
+
+@mixin Transition($background, $hoverBackground) {
+  transition: all 0.3s ease-out;
+  background: $background;
+  &:hover {
+    background: $hoverBackground;
+    transition: all 0.3s ease-out;
+  }
+}
+
+@mixin inputs {
+  box-shadow: 0px 0px 3px rgb(0 0 0 / 35%);
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s ease-out;
+}
+
+@mixin inputsFocus {
+  outline: none;
+  background: #f7fffa;
+  transition: all 0.3s ease-out;
+  box-shadow: 0px 0px 2px rgb(0 0 0);
+}
+
+@mixin DesktopWidth {
+  max-width: 1100px;
+  margin:auto;
+  width:100%;
+}
+
+@mixin StandartFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin LinksHover {
+  transition: all 0.3s ease-out;
+  &:hover {
+    color: blue;
+    transition: all 0.3s ease-out;
+  }
+}
+
+@mixin BasicButton {
+  text-decoration: none;
+  color: black;
+  min-width: 100px;
+  font-weight: 600;
+  margin-left: 10px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  border:none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #020202;
+}
+
+#GeneralContainer {
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  @include DesktopWidth;
+  margin: 0 auto 20px auto;
+  padding: 20px;
+  background: #d3e9ff;
+}
+
+
+#Logo {
+  font-size: 2.4rem;
+  color: #020202;
+  display: flex;
+  align-self: center;
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    li {
+      font-size: 1.4rem;
+      padding-left: 20px;
+    }
+  }
+}
+
+#Logo, ul > li > a {
+  text-decoration: none;
+  color: #020202;
+  @include LinksHover;
+}
+
+.home {
+  @include DesktopWidth;
+}
+
+.news-item {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  padding: 20px;
+  background: $secondaryBackground;
+  border-radius: 5px;
+  margin-bottom: 35px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.description {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  img {
+    width: 200px;
+    object-fit: cover;
+    margin-right: 25px;
+  }
+  p, a {
+    font-size: 1.2rem;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    @include LinksHover;
+  }
+}
+
+.info {
+  margin-top: 20px;
+  width: 100%;
+  @include StandartFlex;
+  span {
+    font-size: 1.2rem;
+  }
+  .category > span {
+    color: blue;
+    font-size: 1rem;
+  }
+  .pubdate {
+    min-width: 180px;
+    text-align: right;
+  }
+}
+
+.link {
+  display: inline;
+  align-self: end;
+  text-decoration: none;
+  color: #313131;
+  font-weight: 600;
+  margin-top: 20px;
+  padding: 10px 25px;
+  @include Transition(#d4dbff, #bec9ff);
+  border-radius: 10px;
+}
+
+.pagination {
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    @include BasicButton;
+    @include Transition(#d4dbff, #bec9ff);
+    &:disabled {
+      color: gray;
+      cursor:auto;
+      background: #d4dbff !important;
+    }
+  }
+}
+
+.sort-block {
+  margin-bottom: 30px;
+  label {
+    font-size: 1.2rem;
+  }
+  .sort-item {
+    font-size: 14px;
+    margin-left: 7px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
+.no-news {
+  text-align: center;
+}
+
+.login-form {
+  border-radius: 5px;
+  background: $secondaryBackground;
+  padding: 30px;
+  min-width: 350px;
+  max-width: 450px;
+  margin: 10% auto 0 auto;
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    label {
+      font-size: 1.2rem;
+      margin-bottom: 7px;
+    }
+    input {
+      padding: 8px;
+      font-size: 1.2rem;
+      @include inputs;
+      &:focus {
+        @include inputsFocus;
+      }
+    }
+  }
+  .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    button {
+      @include BasicButton;
+      @include Transition(#d4dbff, #bec9ff);
+      padding: 15px 25px;
+      width: 40%;
+      margin-top: 25px;
+    }
+  }
+}
