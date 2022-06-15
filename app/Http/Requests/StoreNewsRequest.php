@@ -25,7 +25,7 @@ class StoreNewsRequest extends FormRequest
     {
         return [
           'title' => 'string|max:255|required',
-          'link' => 'string|max:255|required',
+          'link' => 'string|max:255|nullable',
           'description' => 'string|max:1024|required',
           'category' => 'json|required',
       //    'pubdate' => 'date_format:Y-m-d H:i:s|required',

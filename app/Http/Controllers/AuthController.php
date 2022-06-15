@@ -83,6 +83,10 @@ class AuthController extends Controller
     public function userProfile() {
         return response()->json(auth()->user());
     }
+
+    public function checkIfValidToken(Request $request) {
+      return response()->json([ 'valid' => auth()->check() ]);
+    }
     /**
      * Get the token array structure.
      *

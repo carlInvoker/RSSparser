@@ -25,7 +25,7 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string("title", 255);
-            $table->string("link", 255);
+            $table->string("link", 255)->nullable();
             $table->string("description", 1024);
             $table->json("category");
             $table->dateTimeTz('pubdate', $precision = 0);

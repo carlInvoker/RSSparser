@@ -34,6 +34,7 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
 });
+Route::get('/tokenStatus', [AuthController::class, 'checkIfValidToken']);
 
 Route::get('/news', [NewsController::class, 'getNews']);
 Route::get('/news/{news}', [NewsController::class, 'readArticle']);

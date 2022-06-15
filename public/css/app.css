@@ -83,6 +83,16 @@ nav ul li {
 .description p, .description a {
   font-size: 1.2rem;
 }
+.description p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /* number of lines to show */
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  max-height: 100px;
+}
 .description a {
   color: black;
   text-decoration: none;
@@ -112,6 +122,33 @@ nav ul li {
   text-align: right;
 }
 
+.admin-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.admin-actions .link {
+  margin-left: 10px;
+  border: none;
+  font-size: 1rem;
+}
+.admin-actions .edit {
+  transition: all 0.3s ease-out;
+  background: #ffed7c;
+}
+.admin-actions .edit:hover {
+  background: #ffe53e;
+  transition: all 0.3s ease-out;
+}
+.admin-actions .delete {
+  transition: all 0.3s ease-out;
+  background: #ffac9d;
+}
+.admin-actions .delete:hover {
+  background: #ff927e;
+  transition: all 0.3s ease-out;
+}
+
 .link {
   display: inline;
   align-self: end;
@@ -123,9 +160,28 @@ nav ul li {
   transition: all 0.3s ease-out;
   background: #d4dbff;
   border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
 .link:hover {
   background: #bec9ff;
+  transition: all 0.3s ease-out;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create {
+  font-size: 1rem;
+  margin: 0;
+  transition: all 0.3s ease-out;
+  background: #7dff9e;
+}
+.create:hover {
+  background: #58ff82;
   transition: all 0.3s ease-out;
 }
 
@@ -181,7 +237,7 @@ nav ul li {
   padding: 30px;
   min-width: 350px;
   max-width: 450px;
-  margin: 10% auto 0 auto;
+  margin: 120px auto 0 auto;
 }
 .login-form .form-item {
   display: flex;
@@ -230,5 +286,105 @@ nav ul li {
 .login-form .buttons-container button:hover {
   background: #bec9ff;
   transition: all 0.3s ease-out;
+}
+
+@media only screen and (max-width: 1130px) {
+  nav {
+    margin: 0;
+  }
+
+  .home h1 {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .sort-block {
+    padding: 20px;
+  }
+
+  .admin-header {
+    padding: 20px;
+  }
+  .admin-header h1 {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 450px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  nav a {
+    width: 100%;
+    text-align: center;
+    display: inline !important;
+  }
+  nav ul {
+    padding: 0;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  nav ul li {
+    font-size: 1.2rem;
+  }
+
+  .admin-header {
+    flex-wrap: wrap;
+  }
+  .admin-header h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .admin-header button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .sort-block {
+    margin: 0;
+  }
+
+  .description img {
+    width: 100%;
+    margin: 0;
+    max-height: 200px;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+  }
+  .info .pubdate {
+    margin-top: 20px;
+    align-self: flex-end;
+  }
+
+  .admin-actions {
+    flex-direction: column;
+  }
+  .admin-actions .link {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .login-form {
+    padding: 20px;
+    min-width: auto;
+    max-height: none;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #Warning {
+    padding: 20px;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+  .pagination button {
+    margin-left: 0;
+  }
 }
 

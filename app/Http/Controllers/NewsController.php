@@ -30,12 +30,18 @@ class NewsController extends Controller
     $data = $request->validated();
     $data['pubdate'] = Carbon::now();
     $news = News::create($data);
+    if(!isset($data['link'])) {
+      $news->link = url('api/news/'.(string)$news->id);
+      $news->description = $news->description."<p><a href='".$news->link."' >Read more...</a></p>";
+    }
     $news->save();
     return response()->json($news, 200);
   }
 
   public function updateArticle(StoreNewsRequest $request, News $news) {
-    $news->update($request->validated());
+    $validated = $request->validated();
+    $validated['description'] = $validated['description']."<p><a href='".$news->link."' >Read more...</a></p>";
+    $news->update($validated);
     return response()->json($news, 200);
   }
 

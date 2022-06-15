@@ -48,7 +48,7 @@
             this.changePage()
         },
         methods: {
-          changePage(link='/api/news') {
+          changePage(link='/news') {
             axios.get(link, {
               params: {
                 date: this.date

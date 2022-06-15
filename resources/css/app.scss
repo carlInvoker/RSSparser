@@ -137,6 +137,15 @@ nav {
   p, a {
     font-size: 1.2rem;
   }
+  p {
+    overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* number of lines to show */
+              line-clamp: 4;
+      -webkit-box-orient: vertical;
+    max-height: 100px;
+  }
   a {
     color: black;
     text-decoration: none;
@@ -161,6 +170,23 @@ nav {
   }
 }
 
+.admin-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .link {
+    margin-left: 10px;
+    border: none;
+    font-size: 1rem;
+  }
+  .edit {
+      @include Transition(#ffed7c, #ffe53e);
+  }
+  .delete {
+      @include Transition(#ffac9d, #ff927e);
+  }
+}
+
 .link {
   display: inline;
   align-self: end;
@@ -171,6 +197,18 @@ nav {
   padding: 10px 25px;
   @include Transition(#d4dbff, #bec9ff);
   border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-header {
+  @include StandartFlex;
+}
+
+.create {
+  font-size: 1rem;
+  margin: 0;
+  @include Transition(#7dff9e, #58ff82);
 }
 
 .pagination {
@@ -212,7 +250,7 @@ nav {
   padding: 30px;
   min-width: 350px;
   max-width: 450px;
-  margin: 10% auto 0 auto;
+  margin: 120px auto 0 auto;
   .form-item {
     display: flex;
     flex-direction: column;
@@ -240,6 +278,98 @@ nav {
       padding: 15px 25px;
       width: 40%;
       margin-top: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  nav {
+    margin: 0;
+  }
+  .home h1 {
+    padding: 20px;
+    margin: 0;
+  }
+  .sort-block {
+    padding: 20px;
+  }
+  .admin-header {
+    padding: 20px;
+    h1 {
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  nav {
+    flex-wrap: wrap;
+    a {
+      width: 100%;
+      text-align: center;
+      display: inline !important;
+    }
+    ul {
+      padding: 0;
+      width: 100%;
+      justify-content: space-evenly;
+      li {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .admin-header {
+    flex-wrap: wrap;
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+  .sort-block {
+    margin: 0;
+  }
+  .description {
+    img {
+      width: 100%;
+      margin: 0;
+      max-height: 200px;
+    }
+  }
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    .pubdate {
+      margin-top: 20px;
+      align-self: flex-end;
+    }
+  }
+  .admin-actions {
+    flex-direction: column;
+    .link {
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .login-form {
+    padding: 20px;
+    min-width: auto;
+    max-height: none;
+    width: 100%;
+    margin-top: 0;
+  }
+  #Warning {
+    padding: 20px;
+  }
+  .pagination {
+    justify-content:  center;
+    button {
+      margin-left: 0;
     }
   }
 }
