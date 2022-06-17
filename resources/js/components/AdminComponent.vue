@@ -96,10 +96,10 @@
           }
         },
         createArticle() {
-          this.$router.push({ name: 'create' })
+          this.$router.push({ name: 'article' })
         },
-        updateArticle(articleId) {  
-          this.$router.push({ name: 'create', query: {id: articleId} })
+        updateArticle(articleId) {
+          this.$router.push({ name: 'article', query: {id: articleId} })
         },
       },
     }

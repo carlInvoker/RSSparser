@@ -5,7 +5,7 @@ window.Vue = require('vue').default;
 import { createApp } from 'vue'
 import { createWebHistory, createRouter } from "vue-router";
 import VueAxios from 'vue-axios';
-import Vuex from 'vuex';
+// import Vuex from 'vuex';
 import axios from 'axios';
 
 import App from './App.vue';

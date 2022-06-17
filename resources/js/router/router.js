@@ -2,7 +2,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 import HomeComponent from '../components/HomeComponent.vue';
-import CreateComponent from '../components/CreateComponent.vue';
+import ArticleComponent from '../components/ArticleComponent.vue';
 import LoginComponent from '../components/LoginComponent.vue';
 // import EditComponent from '../components/EditComponent.vue';
 import AdminComponent from '../components/AdminComponent.vue';
@@ -14,9 +14,9 @@ const routes = [
       component: HomeComponent
   },
   {
-      name: 'create',
-      path: '/create',
-      component: CreateComponent,
+      name: 'article',
+      path: '/article',
+      component: ArticleComponent,
       meta: {
         requiresAuth: true,
       },
@@ -38,11 +38,6 @@ const routes = [
         hideForAuth: true,
       }
   },
-  // {
-  //     name: 'edit',
-  //     path: '/edit/:id',
-  //     component: EditComponent
-  // }
 ];
 
 const router = createRouter({ history: createWebHistory(), routes})
@@ -61,18 +56,6 @@ router.beforeEach((to, from, next) => {
   else {
     next()
   }
-
-  // if logged in but tries to go to login page - redirect to main page
-  // if (to.matched.some(record => record.meta.hideForAuth) && loggedIn) {
-  //   next({
-  //     path: '/',
-  //     query: { redirect: to.fullPath }
-  //   })
-  //   return
-  //   }
-  //   else {
-  //     next()
-  //   }
 })
 
 export default router

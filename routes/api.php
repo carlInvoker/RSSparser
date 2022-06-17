@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\XMLparserController;
+// use App\Http\Controllers\XMLparserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Models\News;

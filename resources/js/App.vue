@@ -3,12 +3,6 @@
       <nav class="navbar">
           <router-link to="/" id="Logo">LOGO</router-link>
             <ul>
-              <!-- <li class="nav-item">
-                <router-link to="/create" class="nav-link">Create Article</router-link>
-              </li> -->
-              <!-- <li class="nav-item">
-                <router-link to="/login" class="nav-link">Login</router-link>
-              </li> -->
               <li class="nav-item">
                 <router-link to="/admin" class="nav-link">Admin Panel</router-link>
               </li>

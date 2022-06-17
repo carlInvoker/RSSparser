@@ -9,6 +9,8 @@ use Carbon\Carbon;
 use App\Jobs\FetchNews;
 use App\Http\Controllers\Services\XMLService;
 
+
+// USED FOR TESTING, NOT ACTUALLY REQUIRED FOR PROJECT
 class XMLparserController extends Controller
 {
   private $xmlService;
