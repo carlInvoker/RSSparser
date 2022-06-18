@@ -9,9 +9,9 @@ class News extends Model
 {
     use HasFactory;
 
-    protected $table = 'News';
+    protected $table = 'news';
     public $timestamps = false;
-    
+
     protected $fillable = [
       'title', 'link', 'description','category','pubdate'
     ];
