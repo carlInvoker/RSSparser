@@ -1,6 +1,6 @@
 <h3>How to launch project</h3>
 
-1) Download project or <<  git clone --branch master https://github.com/carlInvoker/RSSparser.git  >>
+1) Download project or <<  git clone --branch master https://github.com/carlInvoker/RSSparser.git  >> And then enter the folder << cd RSSparser >>
 2) Install composer dependencies with:
 docker run --rm \
   -u "$(id -u):$(id -g)" \
