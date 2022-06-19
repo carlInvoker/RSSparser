@@ -2,13 +2,14 @@
 
 1) Download project or <<  git clone --branch master https://github.com/carlInvoker/RSSparser.git  >> And then enter the folder << cd RSSparser >>
 2) Install composer dependencies with:
+          '''
           docker run --rm \
           -u "$(id -u):$(id -g)" \
           -v $(pwd):/var/www/html \
           -w /var/www/html \
           laravelsail/php81-composer:latest \
           composer install --ignore-platform-reqs
-
+          '''
 3) Create alias for Laravel Sail:
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
