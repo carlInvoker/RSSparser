@@ -1,3 +1,43 @@
+<h3>How to launch project</h3>
+
+1) Download project or <<  git clone --branch master https://github.com/carlInvoker/RSSparser.git  >>
+2) Install composer dependencies with:
+docker run --rm \
+  -u "$(id -u):$(id -g)" \
+  -v $(pwd):/var/www/html \
+  -w /var/www/html \
+  laravelsail/php81-composer:latest \
+  composer install --ignore-platform-reqs
+
+3) Create alias for Laravel Sail:
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+4) Set up .env, from .env.example
+
+5) Run docker container with:
+sail up -d
+
+6) Install npm dependencies with:
+sail npm install
+
+7) Run migrations with: </br>
+sail artisan migrate:refresh --seed
+
+This will add an admin:
+Email: admin@admin.com
+Password: admin222
+
+8) Set up file storage to save the publication date of the last news parsed from https://lifehacker.com/rss:
+sail artisan make:datefile
+
+9) Now the project is set up. You can run <<  sail artisan schedule:work  >> to run scheduled task,
+which dispatches a job to laravel worker. Then you can stop schedule worker with "ctrl+c" and run
+laravel jobs with worker <<  sail artisan queue:work  >>. This will run all jobs.
+
+I didn't automate it with supervisor, because i am not expierenced with docker enough, and as far as i know
+supervisors are mostly used for production, not development.
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
