@@ -33,7 +33,7 @@ Don't run docker as root
 
         sail artisan migrate:refresh --seed
 
-This will add an admin:
+This will add an admin: </br>
 Email: admin@admin.com
 Password: admin222
 
