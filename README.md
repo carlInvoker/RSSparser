@@ -20,13 +20,17 @@
 4) Set up .env, from .env.example
 
 5) Run docker container with:
+
         sail up -d 
+
 Don't run docker as root
 
 6) Install npm dependencies with:
+
         sail npm install
 
 7) Run migrations with:
+
         sail artisan migrate:refresh --seed
 
 This will add an admin:
@@ -34,12 +38,19 @@ Email: admin@admin.com
 Password: admin222
 
 8) Set up file storage to save the publication date of the last news parsed from https://lifehacker.com/rss:
+
         sail artisan make:datefile
 
-9) Now the project is set up, and is avaible at localhost. You can run <<  sail artisan schedule:work  >> to run scheduled task,
-which dispatches a job to laravel worker. Then you can stop schedule worker with "ctrl+c" and run
-laravel jobs with worker <<  sail artisan queue:work  >>. This will run all jobs.
+9) Now the project is set up, and is avaible at localhost. You can run      
 
+        sail artisan schedule:work
+
+to run scheduled task, which dispatches a job to laravel worker. Then you can stop schedule worker with "ctrl+c" and run
+laravel jobs with worker.
+        
+        sail artisan queue:work
+
+This will run all jobs.
 I didn't automate it with supervisor, because i am not expierenced with docker enough, and as far as i know
 supervisors are mostly used for production, not development.
 
