@@ -16,6 +16,7 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 5) Run docker container with:
 sail up -d
+Don't run docker as root
 
 6) Install npm dependencies with:
 sail npm install
