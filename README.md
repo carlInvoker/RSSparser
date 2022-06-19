@@ -33,8 +33,8 @@ Don't run docker as root
 
         sail artisan migrate:refresh --seed
 
-This will add an admin: </br>
-Email: admin@admin.com
+This will add an admin:  </br>
+Email: admin@admin.com  </br>
 Password: admin222
 
 8) Set up file storage to save the publication date of the last news parsed from https://lifehacker.com/rss:
