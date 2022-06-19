@@ -14,6 +14,7 @@
         composer install --ignore-platform-reqs
 
 3) Create alias for Laravel Sail, all following commands laucnhed from host machine:
+
         alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 4) Set up .env, from .env.example
