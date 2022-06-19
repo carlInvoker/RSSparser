@@ -26,7 +26,7 @@ return new class extends Migration
             $table->id();
             $table->string("title", 255);
             $table->string("link", 255)->nullable();
-            $table->string("description", 1024);
+            $table->text('description');
             $table->json("category");
             $table->dateTimeTz('pubdate', $precision = 0);
         });
