@@ -1,6 +1,9 @@
 <h3>How to launch project</h3>
 
-1) Download project or <<  git clone --branch master https://github.com/carlInvoker/RSSparser.git  >> And then enter the folder << cd RSSparser >>
+1) Download project or 
+        git clone --branch master https://github.com/carlInvoker/RSSparser.git
+ And then enter the folder 
+        cd RSSparser 
 2) Install composer dependencies with:
 
         docker run --rm \
@@ -10,27 +13,27 @@
         laravelsail/php81-composer:latest \
         composer install --ignore-platform-reqs
 
-3) Create alias for Laravel Sail:
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+3) Create alias for Laravel Sail, all following commands laucnhed from host machine:
+        alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 4) Set up .env, from .env.example
 
 5) Run docker container with:
-<<  sail up -d  >>
+        sail up -d 
 Don't run docker as root
 
 6) Install npm dependencies with:
-sail npm install
+        sail npm install
 
-7) Run migrations with: </br>
-sail artisan migrate:refresh --seed
+7) Run migrations with:
+        sail artisan migrate:refresh --seed
 
 This will add an admin:
 Email: admin@admin.com
 Password: admin222
 
 8) Set up file storage to save the publication date of the last news parsed from https://lifehacker.com/rss:
-sail artisan make:datefile
+        sail artisan make:datefile
 
 9) Now the project is set up, and is avaible at localhost. You can run <<  sail artisan schedule:work  >> to run scheduled task,
 which dispatches a job to laravel worker. Then you can stop schedule worker with "ctrl+c" and run
