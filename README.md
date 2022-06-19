@@ -15,7 +15,7 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 4) Set up .env, from .env.example
 
 5) Run docker container with:
-sail up -d
+<<  sail up -d  >>
 Don't run docker as root
 
 6) Install npm dependencies with:
